@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>Members</h1>
+    Here is information about all the members of Reign Milsim, click on a member to see more information about their rank, trainings, and previous campaign experience.
+    
+    <div id="members" class="pt-5">
+        <div class="member d-flex mb-2"> 
+            <div class="d-flex align-items-center bg-subduedgrey rounded-1 p-2 w-100">
+                <img class="rounded-5 me-3" src="https://cdn.discordapp.com/avatars/172408031060033537/a_2a5c5ce8933c1f8c0191ee13913f1db5.png?size=48">
+                <div class="d-flex align-items-center w-100">
+                    <p class="h5 flex-grow-1">HELIOS | Bitto#5083</p>
+                    <a class="d-block p-2 border border-gold rounded-1 align-middle"><i class="fas fa-chevron-down text-gold "></i></a>
+                </div>    
+            </div>
+        </div>
+        <div class="member d-flex mb-2"> 
+            <div class="d-flex align-items-center bg-subduedgrey rounded-1 p-2 w-100">
+                <img class="rounded-5 me-3" src="https://cdn.discordapp.com/avatars/172408031060033537/a_2a5c5ce8933c1f8c0191ee13913f1db5.png?size=48">
+                <div class="d-flex align-items-center w-100">
+                    <p class="h5 flex-grow-1">HELIOS | Bitto#5083</p>
+                    <a class="d-block p-2 border border-gold rounded-1 align-middle"><i class="fas fa-chevron-down text-gold "></i></a>
+                </div>    
+            </div>
+        </div>
+        <div class="member d-flex mb-2"> 
+            <div class="d-flex align-items-center bg-subduedgrey rounded-1 p-2 w-100">
+                <img class="rounded-5 me-3" src="https://cdn.discordapp.com/avatars/172408031060033537/a_2a5c5ce8933c1f8c0191ee13913f1db5.png?size=48">
+                <div class="d-flex align-items-center w-100">
+                    <p class="h5 flex-grow-1">HELIOS | Bitto#5083</p>
+                    <a class="d-block p-2 border border-gold rounded-1 align-middle"><i class="fas fa-chevron-down text-gold "></i></a>
+                </div>    
+            </div>
+        </div>
+        <div class="member d-flex mb-2"> 
+            <div class="d-flex align-items-center bg-subduedgrey rounded-1 p-2 w-100">
+                <img class="rounded-5 me-3" src="https://cdn.discordapp.com/avatars/172408031060033537/a_2a5c5ce8933c1f8c0191ee13913f1db5.png?size=48">
+                <div class="d-flex align-items-center w-100">
+                    <p class="h5 flex-grow-1">HELIOS | Bitto#5083</p>
+                    <a class="d-block p-2 border border-gold rounded-1 align-middle"><i class="fas fa-chevron-down text-gold "></i></a>
+                </div>    
+            </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+
+
+
+
+<script>
+    $.get('/api/users', (data, status) => {
+        data.forEach(usr => {
+            $("<pre></pre>").text(JSON.stringify(usr)).appendTo("#members")
+        });
+    
+    });    
+</script>

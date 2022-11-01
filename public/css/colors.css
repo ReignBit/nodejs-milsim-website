@@ -1,0 +1,60 @@
+.text-gold {
+    color: #FDC149;
+}
+
+.bg-gold {
+    background-color: #FDC149;
+}
+
+.border-gold {
+    border-color: #FDC149 !important;
+}
+
+
+.text-subduedgrey {
+    color: #2E2D2D;
+}
+
+.bg-subduedgrey {
+    background-color: #2E2D2D;
+}
+
+
+.text-darkgrey {
+    color: #1E1E1E;
+}
+
+.bg-darkgrey {
+    background-color: #1E1E1E;
+}
+
+.text-nicegrey {
+    color: #C4C4C4;
+}
+
+.text-grey {
+    color: #454545;
+}
+
+.bg-grey {
+    background-color: #454545;
+}
+
+.bg-brightgrey {
+    background-color: #353535;
+}
+
+.text-lightgrey {
+    color: #454545;
+}
+
+.bg-lightgrey {
+    background-color: #454545;
+}
+
+
+.bg-blurple {
+    background-color: #7289da;
+    color: white;
+    border: none;
+}

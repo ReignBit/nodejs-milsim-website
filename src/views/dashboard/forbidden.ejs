@@ -1,0 +1,23 @@
+<script type="text/javascript">
+  $(window).on('load', function() {
+    $('#staticBackdrop').modal('show');
+});
+</script>
+<div class="modal modal-lg fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+  <div class="modal-dialog bg-subduedgrey">
+    <div class="modal-content bg-subduedgrey">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><i class="fas fa-exclamation-circle mx-2"></i>Dashboard Unavailable</h1>
+      </div>
+      <div class="modal-body">
+        Our dashboard requires user data from our Discord server.<br>
+        To access the dashboard, please join the <a class="text-gold" href='https://discord.gg/GDYhzVhunZ'>Reign Milsim Discord server</a>, and then re-login to this site.
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-secondary" href="/">Back to home</a>
+        <a class="btn btn-warning" href="/logout">Log out</a>
+      </div>
+    </div>
+  </div>
+</div>
+

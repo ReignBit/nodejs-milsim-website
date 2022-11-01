@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="Reign Milsim" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://milsim.reign-network.co.uk" />
+    <meta property="og:image" content="https://milsim.reign-network.co.uk/static/img/reign-thumb.png" />
+    <meta property="og:description" content="An Arma 3 Military simulation roleplaying community" />
+    <meta name="theme-color" content="#FDC149">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <!--Local CSS-->
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/colors.css">
+    
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/66f1f5f520.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title><%=title%> | Reign Milsim</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/ico.ico">
+</head>
+<body class="vh-100">
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg dark shadow bg-subduedgrey">
+        <div class="container-fluid d-flex  flex-shrink-0">
+            <a href="/" class="title mt-2 ml-3 d-flex align-items-center justify-content-evenly">
+                <div class="">
+                    <img src="/static/img/reign.png" style="width:50px;height:50px;">
+                    Reign Milsim
+                </div>
+            </a>
+            
+            <button class="navbar-toggler border-0 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-gold"></i>
+            </button>
+
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item px-4">
+                        <a href="/" class="nav-link text-gold">Home</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a href="/campaigns" class="nav-link text-gold">Campaigns</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a href="/join" class="nav-link text-gold">Join</a>
+                    </li>
+                    <li class="d-lg-none text-center">
+                        <% if (!session.loggedIn) { %>
+                         
+                            <a href=<%=loginLink%> class="text-white bg-blurple px-2 pt-1 pb-1">
+                                <i class="fab fa-discord"></i> <span class='discord-text'>Login with Discord</span>
+                            </a>
+                        <% } %>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <!-- <span class="text-white text-align-right px-1">, <a href="/logout">Log out</a></span> -->
+
+            <% if (session.loggedIn) { %>
+                <div class="dropdown show pe-5">
+                    <a class="d-block discord-text text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img style="max-height:48px;max-width:48px;" class="rounded-5 d-none d-md-inline" src="https://cdn.discordapp.com/avatars/<%=session.discordUser.id%>/<%=session.discordUser.avatar%>.png">
+                        <%=session.discordUser.username%>#<%=session.discordUser.discriminator%>
+                    </a>
+                    <div class="dropdown-menu rounded-0 mt-2 bg-grey px-0 pt-0" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item dropdown-hover text-white" href="#">Settings</a>
+                        <a class="dropdown-item dropdown-hover text-white" href="/dashboard">Dashboard</a>
+                        <% if (env === "dev") { %>
+                            <a class="dropdown-item dropdown-hover bg-warning text-danger" href="/api/v1/debug"><i class="fas fa-bug"></i>DEBUG</a>
+                        <% } %>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item dropdown-hover text-white" href="/logout">Log out</a>
+                    </div>
+
+                </div>
+
+            <% } else {%>
+                <a href=<%=loginLink%> class="text-white text-align-right bg-blurple px-2 pt-1 pb-1 d-none d-lg-block">
+                    <i class="fab fa-discord"></i> <span class='discord-text'>Login with Discord</span>
+                </a>
+            <%}%>
+
+
+        </div>
+    </nav>
+
+    <% if (req.session.alerts) {%>
+        <% req.session.alerts.forEach((alert, i) => { %>
+            <div class="alert alert-<%=alertIds[alert].status%> alert-dismissible rounded-0 m-0" role="alert">
+                <% if (alertIds[alert].canQuit) {%>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <%}%>
+                <h4>
+                    <%=alertIds[alert].title%>
+                </h4>
+                <%-alertIds[alert].content%>
+
+            </div>
+        <% }); %>
+    <% } %>

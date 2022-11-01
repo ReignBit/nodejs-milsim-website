@@ -1,0 +1,40 @@
+{
+    "nav": [
+        {
+            "type": "btn",
+            "name": "Members",
+            "iconCls": "fa-user", 
+            "permission": 0,
+            "uri": "/dashboard/members"
+        },
+        {
+            "type": "btn-group",
+            "name": "Intel",
+            "iconCls": "fa-book", 
+            "permission": 0,
+            "uri": "intel",
+            "subnav": [
+                {
+                    "type": "btn",
+                    "name": "Docs",
+                    "iconCls": "fa-file-alt",
+                    "permission": 0,
+                    "uri": "/dashboard/intel"
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "name": "Admin",
+            "permission": 1
+        },
+        {
+            "type": "btn",
+            "name": "Event Manager",
+            "iconCls": "fa-file-alt",
+            "permission": 1,
+            "uri": "/dashboard/events"
+        }
+
+    ]
+}

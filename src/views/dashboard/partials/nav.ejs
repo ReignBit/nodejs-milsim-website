@@ -1,0 +1,67 @@
+<div class="col-auto px-0">
+    <div id="sidebar" class="collapse collapse-horizontal show bg-subduedgrey vh-100">
+        <a class="text-white" href="/dashboard">
+            <h3 class="text-center pt-3 pb-3">Dashboard</h3>
+            <hr class="pt-0 mt-0">
+        </a>
+
+
+    
+
+        <div class="list-group border-0 rounded-0 text-sm-start" style="width: 200px">
+            <% dashboardNav.forEach((item) => { %>
+                <% if (user.permission == 0) {%>
+                    
+                    <% if (item.type == "btn") { %>
+                        <a href="<%=item.uri%>" class="list-group-item <%- ( dashPage == item.name.toLowerCase() ? ' bg-gold ' : ' bg-brightgrey text-white ' ) %> d-inline-block row g-0 text-truncate" data-bs-parent="#sidebar">
+                            <i class="fas <%=item.iconCls%> col-2"></i><span class="col-auto"><%=item.name%></span>
+                        </a>
+                    <% } else if (item.type == "btn-group") {%>
+                        <a href="#<%-item.name%>" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item <%- ( dashPage == item.name.toLowerCase() ? ' bg-gold ' : ' bg-brightgrey text-white ' ) %> d-inline-block row g-0 text-truncate">
+                            <i class="fas <%=item.iconCls%> col-2"></i><span class="col-auto"><%=item.name%></span>
+                        </a>
+                        <ul class="collapse list-unstyled bg-brightgrey" id="<%-item.name%>">
+                            <span class=" d-flex justify-content-end w-100">
+                                <% item.subnav.forEach((sub) => {%>
+                                    <a href="<%=sub.uri%>" class="w-75 list-group-item <%- ( dashPage == sub.name.toLowerCase() ? ' bg-gold ' : ' bg-brightgrey text-white' ) %> d-inline-block row g-0 text-truncate" data-bs-parent="#sidebar">
+                                        <i class="fas <%=sub.iconCls%> col-2"></i><span class="col-auto"><%=sub.name%></span>
+                                    </a>
+                                <%});%>
+
+                            </span>
+                        </ul>  
+                        
+                    <% } else if (item.type == "section") {%>
+                        <div class="text-center pt-5">
+                            <h5><%=item.name%></h5>
+                            <hr class="pt-0 mt-0">
+                        </div>
+                    <% } %>
+                <% } %>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Remember collapsed state for submenus
+    $(document).ready(function () {
+        //If shown.bs.collapse add the unique id to local storage
+        $(".collapse").on("shown.bs.collapse", function () {
+            localStorage.setItem("coll_" + this.id, true);
+        });
+        //If hidden.bs.collaspe remove the unique id from local storage
+        $(".collapse").on("hidden.bs.collapse", function () {
+            localStorage.removeItem("coll_" + this.id);
+        });
+        //If the key exists and is set to true, show the collapsed, otherwise hide
+        $(".collapse").each(function () {
+            if (localStorage.getItem("coll_" + this.id) == "true") {
+                $(this).addClass("show");
+            }
+            else {
+                $(this).removeClass("show");
+            }
+        });
+    });
+</script>

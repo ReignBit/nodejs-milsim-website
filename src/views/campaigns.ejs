@@ -1,0 +1,103 @@
+<%- include("partials/header", title) -%>
+
+    <!--Main content-->
+    <section>
+        <br>
+        <div class="modal fade" id="campaign1modal" tabindex="-1" aria-labelledby="campaign1modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-subduedgrey">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="campaign1modalLabel">Campaign Name</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="campaign2modal" tabindex="-1" aria-labelledby="campaign2modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-subduedgrey">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="campaign2modalLabel">Campaign Name</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="campaign3modal" tabindex="-1" aria-labelledby="campaign3modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-subduedgrey">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="campaign3modalLabel">Campaign Name</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="mt-5 mb-5">
+                <h2>Current Campaign</h2>
+                <p>
+                    Find out more information about our currently running campaign here. 
+                </p>
+
+                <div class="card bg-subduedgrey mx-2 rounded-top-corners-1">
+                    <img class="card-img-top" src="/static/img/1.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="mt-5 mb-5">
+                <h2>Previous Campaigns</h2>
+                <p>
+                    Take a look at some of our previous campaigns to see the kind of style we run our missions in. 
+                </p>
+                
+                <div class="card-group">
+                    <div class="card bg-subduedgrey mx-2 rounded-top-corners-1">
+                        <a data-bs-toggle="modal" data-bs-target="#campaign1modal">
+                            <img class="card-img-top" src="/static/img/1.png" alt="Card image cap">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                    <div class="card bg-subduedgrey mx-2 rounded-top-corners-1">
+                        <a data-bs-toggle="modal" data-bs-target="#campaign2modal">
+                            <img class="card-img-top" src="/static/img/3.png" alt="Card image cap">
+                        </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                      </div>
+                    </div>
+                    <div class="card bg-subduedgrey mx-2 rounded-top-corners-1">
+                        <a data-bs-toggle="modal" data-bs-target="#campaign3modal">
+                            <img class="card-img-top" src="/static/img/2.png" alt="Card image cap">
+                        </a>
+                      <div class="card-body">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <%- include("partials/footer") -%>

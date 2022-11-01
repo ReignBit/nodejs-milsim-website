@@ -1,0 +1,92 @@
+body {
+    background-color: #1E1E1E;
+    color: white;
+    font-family: 'Raleway', 'Sans-serif', 'Arial';
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: white;
+    filter: brightness(0.85);
+}
+
+
+p {
+    color: #C4C4C4;
+}
+
+h1, h2, h3 {
+    font-family: "Montserrat"
+}
+
+.milsim-active {
+    margin: auto;
+    background-color: green;
+
+}
+
+.milsim-inactive {
+    margin: auto;
+    color: darkred;
+    border-color: darkred;
+    border: 2px solid darkred;
+
+}
+
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.footer {
+    margin-bottom: 20vh;
+    margin-top: 20%;
+}
+
+.navbar {
+    background-color: #2E2D2D;
+}
+
+.blur {
+    backdrop-filter: blur(10px);
+    z-index: 12;
+}
+
+.title {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+
+.title:hover {
+    color: white;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.navbar-collapse {
+    flex-basis: 100%;
+    align-items: center;
+}
+
+.discord-text {
+    font-family: "Arial";
+}
+
+.dropdown-hover:hover {
+    background-color: #2E2D2D;
+}
+
+.rounded-top-corners-1 {
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+

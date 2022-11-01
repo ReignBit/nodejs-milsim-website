@@ -1,0 +1,18 @@
+<%- include("partials/header", title) -%>
+
+  <!--Main content-->
+  <div class="container-fluid min-vh-100">
+    <div class="row flex-nowrap">
+      <%- include("dashboard/partials/nav") -%>
+      <main class="col ps-md-2 pt-2">
+        <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse"
+          class=""><i class="fas fa-bars text-gold"></i>
+        </a>
+        <!-- include here -->
+        
+        <%- include("dashboard/" + dashPage) -%>
+
+
+      </main>
+    </div>
+  </div>
